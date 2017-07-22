@@ -30,8 +30,10 @@
 </template>
 
 <script>
+
     import defaultComponent from  './show.vue'
     import listsComponent from  './list.vue'
+    import {VIEW} from  './../State/blogState'
     export default {
         components: {
             defaultComponent,
@@ -39,7 +41,7 @@
         },
         data() {
             return {
-                toggleValue: true
+                toggleValue: VIEW
             }
         },
         mounted() {

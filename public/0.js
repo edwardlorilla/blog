@@ -49,7 +49,7 @@ var Component = __webpack_require__(8)(
   /* script */
   __webpack_require__(52),
   /* template */
-  __webpack_require__(58),
+  __webpack_require__(59),
   /* styles */
   null,
   /* scopeId */
@@ -180,6 +180,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__show_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__list_vue__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__list_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__list_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__State_blogState__ = __webpack_require__(58);
 //
 //
 //
@@ -211,6 +212,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
+
 
 
 
@@ -221,7 +224,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
-            toggleValue: true
+            toggleValue: __WEBPACK_IMPORTED_MODULE_2__State_blogState__["VIEW"]
         };
     },
     mounted: function mounted() {
@@ -438,6 +441,18 @@ if (false) {
 /***/ }),
 
 /***/ 58:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export STATE_VIEW */
+/**
+ * Created by Lorilla on 23/07/2017.
+ */
+var STATE_VIEW = true;
+
+/***/ }),
+
+/***/ 59:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
