@@ -5,8 +5,9 @@
                 <img src="http://dummyimage.com/250x250" class="img-responsive">
             </div>
             <div class="col-md-12 nopad">
-                <h5>Ratting S</h5>
-                <p>Lorem Ipsum is simply dummy text o industry...</p>
+                <h1>{{fetchArray.title}}</h1>
+                <h5>{{fetchArray.created_at}}</h5>
+                <p>{{fetchArray.content}}</p>
                 <div class="rfooter">
                     <i class="fa fa-phone-square"></i> +3000000
                 </div>
@@ -49,6 +50,7 @@
 </style>
 <script>
     export default {
+        props:['fetchArray'],
         mounted() {
             console.log('Component mounted.')
         }

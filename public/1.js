@@ -72,10 +72,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['fetchArray'],
     mounted: function mounted() {
         console.log('Component mounted.');
     }
@@ -87,38 +86,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "col-md-8"
-  }, [_c('h1', {
-    staticClass: "page-header"
-  }, [_vm._v("\n        Page Heading\n        "), _c('small', [_vm._v("Secondary Text")])]), _vm._v(" "), _c('h2', [_c('a', {
+  }, [_vm._m(0), _vm._v(" "), _c('h2', [_c('a', {
     attrs: {
       "href": "#"
     }
-  }, [_vm._v("Blog Post Title")])]), _vm._v(" "), _c('p', {
-    staticClass: "lead"
-  }, [_vm._v("\n        by "), _c('a', {
-    attrs: {
-      "href": "index.php"
-    }
-  }, [_vm._v("Start Bootstrap")])]), _vm._v(" "), _c('p', [_c('span', {
+  }, [_vm._v(_vm._s(_vm.fetchArray.title))])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('p', [_c('span', {
     staticClass: "glyphicon glyphicon-time"
-  }), _vm._v(" Posted on August 28, 2013 at 10:00 PM")]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('img', {
+  }), _vm._v(" Posted on " + _vm._s(_vm.fetchArray.created_at))]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('img', {
     staticClass: "img-responsive",
     attrs: {
       "src": "http://placehold.it/900x300",
       "alt": ""
     }
-  }), _vm._v(" "), _c('hr'), _vm._v(" "), _c('p', [_vm._v("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus\n        inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis\n        ipsum officiis rerum.")]), _vm._v(" "), _c('a', {
+  }), _vm._v(" "), _c('hr'), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.fetchArray.content))]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('hr')])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('h1', {
+    staticClass: "page-header"
+  }, [_vm._v("\n        Page Heading\n        "), _c('small', [_vm._v("Secondary Text")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', {
+    staticClass: "lead"
+  }, [_vm._v("\n        by "), _c('a', [_vm._v("Start Bootstrap")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('a', {
     staticClass: "btn btn-primary",
     attrs: {
       "href": "#"
     }
   }, [_vm._v("Read More "), _c('span', {
     staticClass: "glyphicon glyphicon-chevron-right"
-  })]), _vm._v(" "), _c('hr')])
+  })])
 }]}
 module.exports.render._withStripped = true
 if (false) {

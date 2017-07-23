@@ -47,7 +47,7 @@ module.exports = Component.exports
 var disposed = false
 var Component = __webpack_require__(8)(
   /* script */
-  __webpack_require__(52),
+  __webpack_require__(53),
   /* template */
   __webpack_require__(59),
   /* styles */
@@ -113,10 +113,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['fetchArray'],
     mounted: function mounted() {
         console.log('Component mounted.');
     }
@@ -128,38 +127,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "col-md-8"
-  }, [_c('h1', {
-    staticClass: "page-header"
-  }, [_vm._v("\n        Page Heading\n        "), _c('small', [_vm._v("Secondary Text")])]), _vm._v(" "), _c('h2', [_c('a', {
+  }, [_vm._m(0), _vm._v(" "), _c('h2', [_c('a', {
     attrs: {
       "href": "#"
     }
-  }, [_vm._v("Blog Post Title")])]), _vm._v(" "), _c('p', {
-    staticClass: "lead"
-  }, [_vm._v("\n        by "), _c('a', {
-    attrs: {
-      "href": "index.php"
-    }
-  }, [_vm._v("Start Bootstrap")])]), _vm._v(" "), _c('p', [_c('span', {
+  }, [_vm._v(_vm._s(_vm.fetchArray.title))])]), _vm._v(" "), _vm._m(1), _vm._v(" "), _c('p', [_c('span', {
     staticClass: "glyphicon glyphicon-time"
-  }), _vm._v(" Posted on August 28, 2013 at 10:00 PM")]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('img', {
+  }), _vm._v(" Posted on " + _vm._s(_vm.fetchArray.created_at))]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('img', {
     staticClass: "img-responsive",
     attrs: {
       "src": "http://placehold.it/900x300",
       "alt": ""
     }
-  }), _vm._v(" "), _c('hr'), _vm._v(" "), _c('p', [_vm._v("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, veritatis, tempora, necessitatibus\n        inventore nisi quam quia repellat ut tempore laborum possimus eum dicta id animi corrupti debitis\n        ipsum officiis rerum.")]), _vm._v(" "), _c('a', {
+  }), _vm._v(" "), _c('hr'), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.fetchArray.content))]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('hr')])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('h1', {
+    staticClass: "page-header"
+  }, [_vm._v("\n        Page Heading\n        "), _c('small', [_vm._v("Secondary Text")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', {
+    staticClass: "lead"
+  }, [_vm._v("\n        by "), _c('a', [_vm._v("Start Bootstrap")])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('a', {
     staticClass: "btn btn-primary",
     attrs: {
       "href": "#"
     }
   }, [_vm._v("Read More "), _c('span', {
     staticClass: "glyphicon glyphicon-chevron-right"
-  })]), _vm._v(" "), _c('hr')])
+  })])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -175,12 +174,37 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return STATE_VIEW; });
+/**
+ * Created by Lorilla on 23/07/2017.
+ */
+var STATE_VIEW = true;
+/* harmony default export */ __webpack_exports__["b"] = ({
+    data: {
+        dataFetch: [],
+        editData: {}
+    },
+    fetch: function fetch(urlFetch) {
+        var _this = this;
+
+        axios.get(urlFetch).then(function (response) {
+            return _this.data.dataFetch = response.data;
+        });
+    }
+});
+
+/***/ }),
+
+/***/ 53:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__show_vue__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__show_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__list_vue__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__list_vue__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__list_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__list_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__State_blogState__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__State_blogState__ = __webpack_require__(52);
 //
 //
 //
@@ -212,6 +236,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 
@@ -224,7 +249,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
-            toggleValue: __WEBPACK_IMPORTED_MODULE_2__State_blogState__["VIEW"]
+            toggleValue: __WEBPACK_IMPORTED_MODULE_2__State_blogState__["a" /* STATE_VIEW */],
+            dataView: __WEBPACK_IMPORTED_MODULE_2__State_blogState__["b" /* default */].data
         };
     },
     mounted: function mounted() {
@@ -244,30 +270,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     methods: {
         fetchData: function fetchData() {
-            axios.get('api/blog').then(function (response) {
-                console.log(response);
-            }).catch(function (error) {
-                console.log(error);
-            });
+            var urlFetch = 'api/blog';
+            __WEBPACK_IMPORTED_MODULE_2__State_blogState__["b" /* default */].fetch(urlFetch);
         }
     }
 });
 
 /***/ }),
 
-/***/ 53:
+/***/ 54:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(54)
+  __webpack_require__(55)
 }
 var Component = __webpack_require__(8)(
   /* script */
-  __webpack_require__(56),
-  /* template */
   __webpack_require__(57),
+  /* template */
+  __webpack_require__(58),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -300,13 +323,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 54:
+/***/ 55:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(55);
+var content = __webpack_require__(56);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -327,7 +350,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 55:
+/***/ 56:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(9)(undefined);
@@ -342,7 +365,7 @@ exports.push([module.i, "\n.bg[data-v-520abb36] {\n    background-color: #dfdfdf
 
 /***/ }),
 
-/***/ 56:
+/***/ 57:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -396,8 +419,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['fetchArray'],
     mounted: function mounted() {
         console.log('Component mounted.');
     }
@@ -405,30 +430,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 57:
+/***/ 58:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "col-xs-12 col-sm-6 col-md-3 rwrapper"
   }, [_c('div', {
     staticClass: "rlisting"
-  }, [_c('div', {
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "col-md-12 nopad"
+  }, [_c('h1', [_vm._v(_vm._s(_vm.fetchArray.title))]), _vm._v(" "), _c('h5', [_vm._v(_vm._s(_vm.fetchArray.created_at))]), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.fetchArray.content))]), _vm._v(" "), _vm._m(1)])])])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "col-md-12 nopad"
   }, [_c('img', {
     staticClass: "img-responsive",
     attrs: {
       "src": "http://dummyimage.com/250x250"
     }
-  })]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-12 nopad"
-  }, [_c('h5', [_vm._v("Ratting S")]), _vm._v(" "), _c('p', [_vm._v("Lorem Ipsum is simply dummy text o industry...")]), _vm._v(" "), _c('div', {
+  })])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
     staticClass: "rfooter"
   }, [_c('i', {
     staticClass: "fa fa-phone-square"
-  }), _vm._v(" +3000000\n            ")])])])])
+  }), _vm._v(" +3000000\n            ")])
 }]}
 module.exports.render._withStripped = true
 if (false) {
@@ -437,18 +464,6 @@ if (false) {
      require("vue-hot-reload-api").rerender("data-v-520abb36", module.exports)
   }
 }
-
-/***/ }),
-
-/***/ 58:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export STATE_VIEW */
-/**
- * Created by Lorilla on 23/07/2017.
- */
-var STATE_VIEW = true;
 
 /***/ }),
 
@@ -477,9 +492,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     domProps: {
       "textContent": _vm._s(_vm.toggleValue ? ' List' : ' Grid')
     }
-  })])])]), _vm._v(" "), _c(_vm.dynamicComponent, {
-    tag: "component"
-  })], 1)])
+  })])])]), _vm._v(" "), _vm._l((_vm.dataView.dataFetch), function(postFetch) {
+    return _c(_vm.dynamicComponent, {
+      key: postFetch.id,
+      tag: "component",
+      attrs: {
+        "fetchArray": postFetch
+      }
+    })
+  })], 2)])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

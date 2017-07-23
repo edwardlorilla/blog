@@ -24,7 +24,7 @@
 
                 </div>
             </div>
-            <component :is="dynamicComponent"></component>
+            <component :is="dynamicComponent" v-for="postFetch in dataView.dataFetch" :key="postFetch.id" :fetchArray="postFetch"></component>
         </div>
     </div>
 </template>
@@ -33,7 +33,8 @@
 
     import defaultComponent from  './show.vue'
     import listsComponent from  './list.vue'
-    import {VIEW} from  './../State/blogState'
+    import {STATE_VIEW} from  './../State/blogState'
+    import BLOG_STATE from  './../State/blogState'
     export default {
         components: {
             defaultComponent,
@@ -41,7 +42,8 @@
         },
         data() {
             return {
-                toggleValue: VIEW
+                toggleValue: STATE_VIEW,
+                dataView: BLOG_STATE.data
             }
         },
         mounted() {
@@ -60,13 +62,8 @@
         },
         methods: {
             fetchData(){
-                axios.get('api/blog')
-                        .then(function (response) {
-                            console.log(response);
-                        })
-                        .catch(function (error) {
-                            console.log(error);
-                        });
+                var urlFetch = 'api/blog';
+                BLOG_STATE.fetch(urlFetch);
             }
         }
     }
