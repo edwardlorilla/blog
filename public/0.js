@@ -16,9 +16,9 @@ var Component = __webpack_require__(8)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\xampp\\htdocs\\blog\\resources\\assets\\js\\components\\Blog\\show.vue"
+Component.options.__file = "C:\\xampp\\htdocs\\blog\\resources\\assets\\js\\components\\Blog\\grid.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] show.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] grid.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -27,9 +27,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-72938544", Component.options)
+    hotAPI.createRecord("data-v-cc8a2de6", Component.options)
   } else {
-    hotAPI.reload("data-v-72938544", Component.options)
+    hotAPI.reload("data-v-cc8a2de6", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -47,7 +47,7 @@ module.exports = Component.exports
 var disposed = false
 var Component = __webpack_require__(8)(
   /* script */
-  __webpack_require__(53),
+  __webpack_require__(52),
   /* template */
   __webpack_require__(59),
   /* styles */
@@ -164,7 +164,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-72938544", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-cc8a2de6", module.exports)
   }
 }
 
@@ -174,37 +174,12 @@ if (false) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return STATE_VIEW; });
-/**
- * Created by Lorilla on 23/07/2017.
- */
-var STATE_VIEW = true;
-/* harmony default export */ __webpack_exports__["b"] = ({
-    data: {
-        dataFetch: [],
-        editData: {}
-    },
-    fetch: function fetch(urlFetch) {
-        var _this = this;
-
-        axios.get(urlFetch).then(function (response) {
-            return _this.data.dataFetch = response.data;
-        });
-    }
-});
-
-/***/ }),
-
-/***/ 53:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__show_vue__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__show_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__show_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__list_vue__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__grid_vue__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__grid_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__grid_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__list_vue__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__list_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__list_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__State_blogState__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__State_blogState__ = __webpack_require__(58);
 //
 //
 //
@@ -244,13 +219,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {
-        defaultComponent: __WEBPACK_IMPORTED_MODULE_0__show_vue___default.a,
+        defaultComponent: __WEBPACK_IMPORTED_MODULE_0__grid_vue___default.a,
         listsComponent: __WEBPACK_IMPORTED_MODULE_1__list_vue___default.a
     },
     data: function data() {
         return {
-            toggleValue: __WEBPACK_IMPORTED_MODULE_2__State_blogState__["a" /* STATE_VIEW */],
-            dataView: __WEBPACK_IMPORTED_MODULE_2__State_blogState__["b" /* default */].data
+            dataFetch: __WEBPACK_IMPORTED_MODULE_2__State_blogState__["a" /* default */].data
         };
     },
     mounted: function mounted() {
@@ -261,7 +235,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     computed: {
         dynamicComponent: function dynamicComponent() {
             var vm = this;
-            if (vm.toggleValue) {
+            if (vm.dataFetch.STATE_VIEW) {
                 return 'default-component';
             } else {
                 return 'lists-component';
@@ -271,26 +245,26 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         fetchData: function fetchData() {
             var urlFetch = 'api/blog';
-            __WEBPACK_IMPORTED_MODULE_2__State_blogState__["b" /* default */].fetch(urlFetch);
+            __WEBPACK_IMPORTED_MODULE_2__State_blogState__["a" /* default */].fetch(urlFetch);
         }
     }
 });
 
 /***/ }),
 
-/***/ 54:
+/***/ 53:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(55)
+  __webpack_require__(54)
 }
 var Component = __webpack_require__(8)(
   /* script */
-  __webpack_require__(57),
+  __webpack_require__(56),
   /* template */
-  __webpack_require__(58),
+  __webpack_require__(57),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -323,13 +297,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 55:
+/***/ 54:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(56);
+var content = __webpack_require__(55);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -350,7 +324,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 56:
+/***/ 55:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(9)(undefined);
@@ -365,7 +339,7 @@ exports.push([module.i, "\n.bg[data-v-520abb36] {\n    background-color: #dfdfdf
 
 /***/ }),
 
-/***/ 57:
+/***/ 56:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -430,7 +404,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 58:
+/***/ 57:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -467,6 +441,30 @@ if (false) {
 
 /***/ }),
 
+/***/ 58:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/**
+ * Created by Lorilla on 23/07/2017.
+ */
+/* harmony default export */ __webpack_exports__["a"] = ({
+    data: {
+        STATE_VIEW: true,
+        dataFetch: [],
+        editData: {}
+    },
+    fetch: function fetch(urlFetch) {
+        var _this = this;
+
+        axios.get(urlFetch).then(function (response) {
+            return _this.data.dataFetch = response.data;
+        });
+    }
+});
+
+/***/ }),
+
 /***/ 59:
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -483,16 +481,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "btn btn-default",
     on: {
       "click": function($event) {
-        _vm.toggleValue = !_vm.toggleValue
+        _vm.dataFetch.STATE_VIEW = !_vm.dataFetch.STATE_VIEW
       }
     }
   }, [_c('span', {
     staticClass: "glyphicon ",
-    class: _vm.toggleValue ? 'glyphicon-th-list' : 'glyphicon-th',
+    class: _vm.dataFetch.STATE_VIEW ? 'glyphicon-th-list' : 'glyphicon-th',
     domProps: {
-      "textContent": _vm._s(_vm.toggleValue ? ' List' : ' Grid')
+      "textContent": _vm._s(_vm.dataFetch.STATE_VIEW ? ' List' : ' Grid')
     }
-  })])])]), _vm._v(" "), _vm._l((_vm.dataView.dataFetch), function(postFetch) {
+  })])])]), _vm._v(" "), _vm._l((_vm.dataFetch.dataFetch), function(postFetch) {
     return _c(_vm.dynamicComponent, {
       key: postFetch.id,
       tag: "component",

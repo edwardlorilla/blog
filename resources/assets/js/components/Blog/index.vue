@@ -10,12 +10,12 @@
                     <!--<a v-on:click="toggleValue = true" class="btn btn-default btn-sm"><span-->
                     <!--class="glyphicon glyphicon-th"></span>Grid</a>-->
                     <a class="btn btn-default"
-                       v-on:click="toggleValue = !toggleValue"
+                       v-on:click="dataFetch.STATE_VIEW = !dataFetch.STATE_VIEW"
 
                     >
                         <span class="glyphicon "
-                              :class="toggleValue ? 'glyphicon-th-list' : 'glyphicon-th' "
-                              v-text="toggleValue ? ' List' : ' Grid'"
+                              :class="dataFetch.STATE_VIEW ? 'glyphicon-th-list' : 'glyphicon-th' "
+                              v-text="dataFetch.STATE_VIEW ? ' List' : ' Grid'"
                         >
 
                     </span>
@@ -24,17 +24,17 @@
 
                 </div>
             </div>
-            <component :is="dynamicComponent" v-for="postFetch in dataView.dataFetch" :key="postFetch.id" :fetchArray="postFetch"></component>
+            <component :is="dynamicComponent" v-for="postFetch in dataFetch.dataFetch" :key="postFetch.id" :fetchArray="postFetch"></component>
         </div>
     </div>
 </template>
 
 <script>
 
-    import defaultComponent from  './show.vue'
+    import defaultComponent from  './grid.vue'
     import listsComponent from  './list.vue'
-    import {STATE_VIEW} from  './../State/blogState'
     import BLOG_STATE from  './../State/blogState'
+
     export default {
         components: {
             defaultComponent,
@@ -42,8 +42,7 @@
         },
         data() {
             return {
-                toggleValue: STATE_VIEW,
-                dataView: BLOG_STATE.data
+                dataFetch: BLOG_STATE.data
             }
         },
         mounted() {
@@ -53,7 +52,7 @@
         computed: {
             dynamicComponent() {
                 var vm = this
-                if (vm.toggleValue) {
+                if (vm.dataFetch.STATE_VIEW) {
                     return 'default-component';
                 } else {
                     return 'lists-component';
