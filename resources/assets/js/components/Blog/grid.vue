@@ -17,7 +17,7 @@
         <img class="img-responsive" src="http://placehold.it/900x300" alt="">
         <hr>
         <p>{{fetchArray.content}}</p>
-        <a class="btn btn-primary" href="#">Read More <span
+        <a class="btn btn-primary" @click="$emit('selectedPost', fetchArray)">Read More <span
                 class="glyphicon glyphicon-chevron-right"></span></a>
 
         <hr>
@@ -26,9 +26,6 @@
 
 <script>
     export default {
-        props:['fetchArray'],
-        mounted() {
-            console.log('Component mounted.')
-        }
+        props:['fetchArray']
     }
 </script>

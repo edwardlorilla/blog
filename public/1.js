@@ -74,10 +74,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['fetchArray'],
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    }
+    props: ['fetchArray']
 });
 
 /***/ }),
@@ -100,7 +97,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "src": "http://placehold.it/900x300",
       "alt": ""
     }
-  }), _vm._v(" "), _c('hr'), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.fetchArray.content))]), _vm._v(" "), _vm._m(2), _vm._v(" "), _c('hr')])
+  }), _vm._v(" "), _c('hr'), _vm._v(" "), _c('p', [_vm._v(_vm._s(_vm.fetchArray.content))]), _vm._v(" "), _c('a', {
+    staticClass: "btn btn-primary",
+    on: {
+      "click": function($event) {
+        _vm.$emit('selectedPost', _vm.fetchArray)
+      }
+    }
+  }, [_vm._v("Read More "), _c('span', {
+    staticClass: "glyphicon glyphicon-chevron-right"
+  })]), _vm._v(" "), _c('hr')])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('h1', {
     staticClass: "page-header"
@@ -109,15 +115,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('p', {
     staticClass: "lead"
   }, [_vm._v("\n        by "), _c('a', [_vm._v("Start Bootstrap")])])
-},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('a', {
-    staticClass: "btn btn-primary",
-    attrs: {
-      "href": "#"
-    }
-  }, [_vm._v("Read More "), _c('span', {
-    staticClass: "glyphicon glyphicon-chevron-right"
-  })])
 }]}
 module.exports.render._withStripped = true
 if (false) {

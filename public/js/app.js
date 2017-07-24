@@ -29,7 +29,7 @@
 /******/
 /******/ 	// objects to store loaded and loading chunks
 /******/ 	var installedChunks = {
-/******/ 		2: 0
+/******/ 		1: 0
 /******/ 	};
 /******/
 /******/ 	// The require function
@@ -44804,19 +44804,12 @@ if (inBrowser && window.Vue) {
  * Created by Lorilla on 21/07/2017.
  */
 var Home = function Home(resolve) {
-    return __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(49)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
-};
-var blogShow = function blogShow(resolve) {
-    return __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(48)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+    return __webpack_require__.e/* require */(0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(48)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
 };
 /* harmony default export */ __webpack_exports__["a"] = ([{
     path: '/',
     component: Home,
     name: 'home'
-}, {
-    path: '/show/:id',
-    component: blogShow,
-    name: 'show'
 }]);
 
 /***/ }),

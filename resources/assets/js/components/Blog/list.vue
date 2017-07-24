@@ -11,6 +11,8 @@
                 <div class="rfooter">
                     <i class="fa fa-phone-square"></i> +3000000
                 </div>
+                <a class="btn btn-primary" @click="$emit('selectedPost', fetchArray)">Read More <span
+                        class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 <template>
     <div class="container">
 
-        <div class="row">
+        <div v-if="!dataView.SELECTED" class="row">
             <div class="well well-sm">
                 <strong>Category Title</strong>
                 <div class="btn-group">
@@ -10,12 +10,12 @@
                     <!--<a v-on:click="toggleValue = true" class="btn btn-default btn-sm"><span-->
                     <!--class="glyphicon glyphicon-th"></span>Grid</a>-->
                     <a class="btn btn-default"
-                       v-on:click="dataFetch.STATE_VIEW = !dataFetch.STATE_VIEW"
+                       v-on:click="dataView.STATE_VIEW = !dataView.STATE_VIEW"
 
                     >
                         <span class="glyphicon "
-                              :class="dataFetch.STATE_VIEW ? 'glyphicon-th-list' : 'glyphicon-th' "
-                              v-text="dataFetch.STATE_VIEW ? ' List' : ' Grid'"
+                              :class="dataView.STATE_VIEW ? 'glyphicon-th-list' : 'glyphicon-th' "
+                              v-text="dataView.STATE_VIEW ? ' List' : ' Grid'"
                         >
 
                     </span>
@@ -24,7 +24,17 @@
 
                 </div>
             </div>
-            <component :is="dynamicComponent" v-for="postFetch in dataFetch.dataFetch" :key="postFetch.id" :fetchArray="postFetch"></component>
+            <component :is="dynamicComponent" v-for="(postFetch, index) in dataView.dataFetch"
+                       :key="postFetch.id"
+                       :fetchArray="postFetch"
+                        @selectedPost = "selectedPost"
+            >
+
+            </component>
+
+        </div>
+        <div v-else class="row">
+            <blog-post :selectedObject="dataView.selectData"></blog-post>
         </div>
     </div>
 </template>
@@ -32,17 +42,17 @@
 <script>
 
     import defaultComponent from  './grid.vue'
+    import blogPost from  './post.vue'
     import listsComponent from  './list.vue'
     import BLOG_STATE from  './../State/blogState'
-
     export default {
         components: {
             defaultComponent,
-            listsComponent
-        },
-        data() {
+            listsComponent,
+            blogPost
+        }, data() {
             return {
-                dataFetch: BLOG_STATE.data
+                dataView: BLOG_STATE.data
             }
         },
         mounted() {
@@ -52,7 +62,7 @@
         computed: {
             dynamicComponent() {
                 var vm = this
-                if (vm.dataFetch.STATE_VIEW) {
+                if (vm.dataView.STATE_VIEW) {
                     return 'default-component';
                 } else {
                     return 'lists-component';
@@ -60,6 +70,9 @@
             }
         },
         methods: {
+            selectedPost(index){
+                BLOG_STATE.selectedPost(index);
+            },
             fetchData(){
                 var urlFetch = 'api/blog';
                 BLOG_STATE.fetch(urlFetch);
