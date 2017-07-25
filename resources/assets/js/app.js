@@ -23,6 +23,24 @@ const app = new Vue({
     el: '#app'
 });*/
 
+import gridComponent from './components/Blog/grid.vue'
+import blogPost from  './components/Blog/post.vue'
+import listsComponent from  './components/Blog/list.vue'
+Vue.component('default-component', function (resolve, reject) {
+    setTimeout(function () {
+        resolve(gridComponent)
+    }, 600)
+});
+Vue.component('lists-component', function (resolve, reject) {
+    setTimeout(function () {
+        resolve(listsComponent)
+    }, 600)
+});
+Vue.component('blog-post', function (resolve, reject) {
+    setTimeout(function () {
+        resolve(blogPost)
+    }, 600)
+});
 
 
 const router = new VueRouter({

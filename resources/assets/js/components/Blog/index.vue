@@ -34,23 +34,15 @@
 
         </div>
         <div v-else class="row">
-            <blog-post :selectedObject="dataView.selectData"></blog-post>
+            <blog-post></blog-post>
         </div>
     </div>
 </template>
 
 <script>
-
-    import defaultComponent from  './grid.vue'
-    import blogPost from  './post.vue'
-    import listsComponent from  './list.vue'
     import BLOG_STATE from  './../State/blogState'
     export default {
-        components: {
-            defaultComponent,
-            listsComponent,
-            blogPost
-        }, data() {
+        data() {
             return {
                 dataView: BLOG_STATE.data
             }
