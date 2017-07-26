@@ -36,12 +36,17 @@
         <div v-else class="row">
             <blog-post></blog-post>
         </div>
+
     </div>
 </template>
 
 <script>
     import BLOG_STATE from  './../State/blogState'
+    import {defaultComponent} from  './../State/blogState'
     export default {
+        components: {
+            'default-component': defaultComponent
+        },
         data() {
             return {
                 dataView: BLOG_STATE.data
