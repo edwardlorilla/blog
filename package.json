@@ -19,6 +19,8 @@
     "vue": "^2.1.10"
   },
   "dependencies": {
+    "velocity": "^0.7.2",
+    "velocity-animate": "^1.5.0",
     "vue-router": "^2.7.0"
   }
 }

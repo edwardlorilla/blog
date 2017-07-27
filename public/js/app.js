@@ -1284,6 +1284,7 @@ window.Vue = __webpack_require__(38);
 
 
 
+
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to

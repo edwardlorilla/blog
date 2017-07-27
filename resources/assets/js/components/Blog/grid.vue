@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-8">
+    <div>
         <h1 class="page-header">
             Page Heading
             <small>Secondary Text</small>

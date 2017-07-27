@@ -1,14 +1,14 @@
 webpackJsonp([1],{
 
-/***/ 63:
+/***/ 65:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(64),
+  __webpack_require__(66),
   /* template */
-  __webpack_require__(65),
+  __webpack_require__(67),
   /* styles */
   null,
   /* scopeId */
@@ -41,7 +41,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 64:
+/***/ 66:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -79,13 +79,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 65:
+/***/ 67:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "col-md-8"
-  }, [_vm._m(0), _vm._v(" "), _c('h2', [_c('a', {
+  return _c('div', [_vm._m(0), _vm._v(" "), _c('h2', [_c('a', {
     attrs: {
       "href": "#"
     }

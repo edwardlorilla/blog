@@ -25,7 +25,7 @@ export default{
         STATE_VIEW: true,
         READY: false,
         dataFetch: [],
-        selectData: {}
+        selectData: {},
     },
     selectedPost(index){
         var vm = this.data
