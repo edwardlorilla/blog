@@ -11,6 +11,8 @@ window.Vue = require('vue');
 import VueRouter from 'vue-router';
 import routes from './routes.js';
 import App from './components/App.vue';
+import Velocity from "velocity-animate"
+window.Velocity = window.velocity = Velocity;
 Vue.use(VueRouter);
 /**
  * Next, we will create a fresh Vue application instance and attach it to

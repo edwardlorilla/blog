@@ -3,15 +3,15 @@
         <div class="row">
             <div v-if="!dataView.SELECTED"
                  class="col-md-8"
-                 >
-                <!--<transition-group
-
-                >-->
+            >
+                <transition-group
+                        name="staggered-fade"
+                        v-bind:css="false"
+                        v-on:before-enter="beforeEnter"
+                        v-on:enter="enter"
+                        v-on:leave="leave"
+                >
                     <!-- Blog Sidebar Widgets Column -->
-                    <transition-group
-                            name="component-fade"
-                            mode="out-in"
-                    >
                     <component v-for="(postFetch, index) in filteredData"
                                v-bind:data-index="index"
 
@@ -21,11 +21,20 @@
                                @selectedPost="selectedPost"
                     >
                     </component>
-                    </transition-group>
+                </transition-group>
             </div>
-                <!--</transition-group>-->
+            <!--</transition-group>-->
             <div v-else>
-                <blog-post :selectedObject="dataView.selectData"></blog-post>
+                <transition
+                        name="staggered-fade"
+                        v-bind:css="false"
+                        v-on:before-enter="beforeEnter"
+                        v-on:enter="enter"
+                        v-on:leave="leave"
+                >
+                    <blog-post :selectedObject="dataView.selectData"></blog-post>
+                </transition>
+
             </div>
             <div class="col-md-4">
                 <div class="well well-sm">
@@ -68,15 +77,6 @@
 
     </div>
 </template>
-<style scoped>
-    .component-fade-enter-active, .component-fade-leave-active {
-        transition: opacity .3s ease;
-    }
-    .component-fade-enter, .component-fade-leave-to
-        /* .component-fade-leave-active 在低于 2.1.8 版本中 */ {
-        opacity: 0;
-    }
-</style>
 <script>
     import BLOG_STATE from  './../State/blogState'
     import {defaultComponent} from  './../State/blogState'
@@ -127,8 +127,8 @@
                 setTimeout(function () {
                     Velocity(
                             el,
-                            { opacity: 1, height: '*=10em' },
-                            { complete: done }
+                            {opacity: 1, height: '100%'},
+                            {complete: done}
                     )
                 }, delay)
             },
@@ -137,8 +137,8 @@
                 setTimeout(function () {
                     Velocity(
                             el,
-                            { opacity: 0, height: 0 },
-                            { complete: done }
+                            {opacity: 0, height: 0},
+                            {complete: done}
                     )
                 }, delay)
             }

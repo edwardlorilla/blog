@@ -1,7 +1,5 @@
 <template>
-    <div class="col-lg-8">
-        <!-- Blog Post -->
-
+    <div>
         <!-- Title -->
         <h1>{{selectedObject.title}}</h1>
 
@@ -32,10 +30,11 @@
 </template>
 
 <script>
+
     export default {
         props: ['selectedObject'],
-        mounted() {
-            console.log('Component mounted.')
+        methods: {
+
         }
     }
 </script>
