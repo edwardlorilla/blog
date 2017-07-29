@@ -45224,7 +45224,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('h1', [_vm._v(_vm._s(_vm.selectedObject.title))]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('hr'), _vm._v(" "), _c('p', [_c('span', {
+  return _c('div', {
+    staticClass: "col-md-8"
+  }, [_c('h1', [_vm._v(_vm._s(_vm.selectedObject.title))]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('hr'), _vm._v(" "), _c('p', [_c('span', {
     staticClass: "glyphicon glyphicon-time"
   }), _vm._v(" Posted on " + _vm._s(_vm.selectedObject.created_at))]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('img', {
     staticClass: "img-responsive",

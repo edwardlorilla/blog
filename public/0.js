@@ -170,8 +170,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -352,7 +350,7 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
+  return _c('fade', [_c('div', {
     staticClass: "container"
   }, [_c('div', {
     staticClass: "row"
@@ -370,13 +368,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "selectedPost": _vm.selectedPost
       }
     })
-  }))], 1) : _c('div', [_c('fade', {
-    staticClass: "col-md-8"
-  }, [_c('blog-post', {
+  }))], 1) : _c('div', [_c('fade', [_c('blog-post', {
     attrs: {
       "selectedObject": _vm.dataView.selectData
     }
-  })], 1)], 1), _vm._v(" "), _c('fade', [_c('div', {
+  })], 1)], 1), _vm._v(" "), _c('div', {
     staticClass: "col-md-4"
   }, [_c('div', {
     staticClass: "well well-sm"
@@ -428,7 +424,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('span', {
     staticClass: "glyphicon glyphicon-search"
-  })])])])])])])], 1)])
+  })])])])])])])])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

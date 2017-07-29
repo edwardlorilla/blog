@@ -1,28 +1,27 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div v-if="!dataView.SELECTED"
-                 class="col-md-8"
-            >
-                <staggered-fade>
-                    <component v-for="(postFetch, index) in filteredData"
-                               v-bind:data-index="index"
-
-                               :is="dynamicComponent"
-                               :key="postFetch.id"
-                               :fetchArray="postFetch"
-                               @selectedPost="selectedPost"
-                    >
-                    </component>
-                </staggered-fade>
-            </div>
-            <!--</transition-group>-->
-            <div v-else>
-                <fade class="col-md-8">
-                    <blog-post :selectedObject="dataView.selectData"></blog-post>
-                </fade>
-            </div>
-            <fade>
+    <fade>
+        <div class="container">
+            <div class="row">
+                <div v-if="!dataView.SELECTED"
+                     class="col-md-8"
+                >
+                    <staggered-fade>
+                        <component v-for="(postFetch, index) in filteredData"
+                                   v-bind:data-index="index"
+                                   :is="dynamicComponent"
+                                   :key="postFetch.id"
+                                   :fetchArray="postFetch"
+                                   @selectedPost="selectedPost"
+                        >
+                        </component>
+                    </staggered-fade>
+                </div>
+                <!--</transition-group>-->
+                <div v-else>
+                    <fade >
+                        <blog-post :selectedObject="dataView.selectData"></blog-post>
+                    </fade>
+                </div>
                 <div class="col-md-4">
                     <div class="well well-sm">
                         <strong>Category Title</strong>
@@ -60,10 +59,9 @@
                         <!-- /.input-group -->
                     </div>
                 </div>
-            </fade>
+            </div>
         </div>
-
-    </div>
+    </fade>
 </template>
 <script>
     import BLOG_STATE from  './../State/blogState'

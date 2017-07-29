@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="col-md-8">
         <!-- Title -->
         <h1>{{selectedObject.title}}</h1>
 
