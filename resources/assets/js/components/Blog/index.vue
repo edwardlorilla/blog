@@ -4,14 +4,7 @@
             <div v-if="!dataView.SELECTED"
                  class="col-md-8"
             >
-                <transition-group
-                        name="staggered-fade"
-                        v-bind:css="false"
-                        v-on:before-enter="beforeEnter"
-                        v-on:enter="enter"
-                        v-on:leave="leave"
-                >
-                    <!-- Blog Sidebar Widgets Column -->
+                <staggered-fade>
                     <component v-for="(postFetch, index) in filteredData"
                                v-bind:data-index="index"
 
@@ -21,20 +14,13 @@
                                @selectedPost="selectedPost"
                     >
                     </component>
-                </transition-group>
+                </staggered-fade>
             </div>
             <!--</transition-group>-->
             <div v-else>
-                <transition
-                        name="staggered-fade"
-                        v-bind:css="false"
-                        v-on:before-enter="beforeEnter"
-                        v-on:enter="enter"
-                        v-on:leave="leave"
-                >
+                <staggered-fade>
                     <blog-post :selectedObject="dataView.selectData"></blog-post>
-                </transition>
-
+                </staggered-fade>
             </div>
             <div class="col-md-4">
                 <div class="well well-sm">
@@ -80,9 +66,11 @@
 <script>
     import BLOG_STATE from  './../State/blogState'
     import {defaultComponent} from  './../State/blogState'
+    import staggeredFade from  './../Transition/staggered-fade'
     export default {
         components: {
-            'default-component': defaultComponent
+            'default-component': defaultComponent,
+            staggeredFade
         },
         data() {
             return {
@@ -117,30 +105,6 @@
             fetchData(){
                 var urlFetch = 'api/blog';
                 BLOG_STATE.fetch(urlFetch);
-            },
-            beforeEnter: function (el) {
-                el.style.opacity = 0
-                el.style.height = 0
-            },
-            enter: function (el, done) {
-                var delay = el.dataset.index * 100
-                setTimeout(function () {
-                    Velocity(
-                            el,
-                            {opacity: 1, height: '100%'},
-                            {complete: done}
-                    )
-                }, delay)
-            },
-            leave: function (el, done) {
-                var delay = el.dataset.index * 100
-                setTimeout(function () {
-                    Velocity(
-                            el,
-                            {opacity: 0, height: 0},
-                            {complete: done}
-                    )
-                }, delay)
             }
         }
     }
