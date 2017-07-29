@@ -1,5 +1,6 @@
 <template>
     <transition-group
+            mode="in-out"
             name="staggered-fade"
             v-bind:css="false"
             v-on:before-enter="beforeEnter"

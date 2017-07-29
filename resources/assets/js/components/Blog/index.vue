@@ -18,22 +18,23 @@
             </div>
             <!--</transition-group>-->
             <div v-else>
-                <staggered-fade>
+                <fade class="col-md-8">
                     <blog-post :selectedObject="dataView.selectData"></blog-post>
-                </staggered-fade>
+                </fade>
             </div>
-            <div class="col-md-4">
-                <div class="well well-sm">
-                    <strong>Category Title</strong>
-                    <div class="btn-group">
-                        <!--<a class="btn btn-default btn-sm" v-on:click="toggleValue = false"><span class="glyphicon glyphicon-th-list">-->
-                        <!--</span>List</a>-->
-                        <!--<a v-on:click="toggleValue = true" class="btn btn-default btn-sm"><span-->
-                        <!--class="glyphicon glyphicon-th"></span>Grid</a>-->
-                        <a class="btn btn-default"
-                           v-on:click="dataView.STATE_VIEW = !dataView.STATE_VIEW"
+            <fade>
+                <div class="col-md-4">
+                    <div class="well well-sm">
+                        <strong>Category Title</strong>
+                        <div class="btn-group">
+                            <!--<a class="btn btn-default btn-sm" v-on:click="toggleValue = false"><span class="glyphicon glyphicon-th-list">-->
+                            <!--</span>List</a>-->
+                            <!--<a v-on:click="toggleValue = true" class="btn btn-default btn-sm"><span-->
+                            <!--class="glyphicon glyphicon-th"></span>Grid</a>-->
+                            <a class="btn btn-default"
+                               v-on:click="dataView.STATE_VIEW = !dataView.STATE_VIEW"
 
-                        >
+                            >
                             <span class="glyphicon "
                                   :class="dataView.STATE_VIEW ? 'glyphicon-th-list' : 'glyphicon-th' "
                                   v-text="dataView.STATE_VIEW ? ' List' : ' Grid'"
@@ -41,24 +42,25 @@
 
                                 </span>
 
-                        </a>
+                            </a>
 
+                        </div>
                     </div>
-                </div>
-                <!-- Blog Search Well -->
-                <div class="well">
-                    <h4>Blog Search</h4>
-                    <div class="input-group">
-                        <input type="text" v-model="searchValue" class="form-control">
+                    <!-- Blog Search Well -->
+                    <div class="well">
+                        <h4>Blog Search</h4>
+                        <div class="input-group">
+                            <input type="text" v-model="searchValue" class="form-control">
                         <span class="input-group-btn">
                             <button class="btn btn-default" type="button">
                                 <span class="glyphicon glyphicon-search"></span>
                                 </button>
                             </span>
+                        </div>
+                        <!-- /.input-group -->
                     </div>
-                    <!-- /.input-group -->
                 </div>
-            </div>
+            </fade>
         </div>
 
     </div>
@@ -66,11 +68,9 @@
 <script>
     import BLOG_STATE from  './../State/blogState'
     import {defaultComponent} from  './../State/blogState'
-    import staggeredFade from  './../Transition/staggered-fade'
     export default {
         components: {
             'default-component': defaultComponent,
-            staggeredFade
         },
         data() {
             return {

@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 49:
+/***/ 65:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var Component = __webpack_require__(8)(
+var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(51),
+  __webpack_require__(67),
   /* template */
-  __webpack_require__(62),
+  __webpack_require__(75),
   /* styles */
   null,
   /* scopeId */
@@ -41,12 +41,12 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 50:
+/***/ 66:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return defaultComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Loading_Placeholder_vue__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Loading_Placeholder_vue__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Loading_Placeholder_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Loading_Placeholder_vue__);
 /**
  * Created by Lorilla on 23/07/2017.
@@ -62,7 +62,7 @@ var defaultComponent = function defaultComponent() {
     return {
         component: new Promise(function (resolve, reject) {
             setTimeout(function () {
-                __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(56)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+                __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(72)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
             }, 1000);
         }),
         loading: __WEBPACK_IMPORTED_MODULE_0__Loading_Placeholder_vue___default.a,
@@ -70,6 +70,7 @@ var defaultComponent = function defaultComponent() {
         delay: 1
     };
 };
+
 /* harmony default export */ __webpack_exports__["a"] = ({
 
     data: {
@@ -98,14 +99,12 @@ var defaultComponent = function defaultComponent() {
 
 /***/ }),
 
-/***/ 51:
+/***/ 67:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__State_blogState__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Transition_staggered_fade__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Transition_staggered_fade___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Transition_staggered_fade__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__State_blogState__ = __webpack_require__(66);
 //
 //
 //
@@ -171,14 +170,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {
-        'default-component': __WEBPACK_IMPORTED_MODULE_0__State_blogState__["b" /* defaultComponent */],
-        staggeredFade: __WEBPACK_IMPORTED_MODULE_1__Transition_staggered_fade___default.a
+        'default-component': __WEBPACK_IMPORTED_MODULE_0__State_blogState__["b" /* defaultComponent */]
     },
     data: function data() {
         return {
@@ -220,19 +219,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 52:
+/***/ 68:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(53)
+  __webpack_require__(69)
 }
-var Component = __webpack_require__(8)(
+var Component = __webpack_require__(1)(
   /* script */
   null,
   /* template */
-  __webpack_require__(55),
+  __webpack_require__(71),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -265,17 +264,17 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 53:
+/***/ 69:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(54);
+var content = __webpack_require__(70);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(10)("6e912efc", content, false);
+var update = __webpack_require__(3)("6e912efc", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -292,10 +291,10 @@ if(false) {
 
 /***/ }),
 
-/***/ 54:
+/***/ 70:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(9)(undefined);
+exports = module.exports = __webpack_require__(2)(undefined);
 // imports
 
 
@@ -307,7 +306,7 @@ exports.push([module.i, "\n.timeline-item[data-v-9afcb10c] {\n    background: #f
 
 /***/ }),
 
-/***/ 55:
+/***/ 71:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -349,115 +348,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 59:
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var Component = __webpack_require__(8)(
-  /* script */
-  __webpack_require__(60),
-  /* template */
-  __webpack_require__(61),
-  /* styles */
-  null,
-  /* scopeId */
-  null,
-  /* moduleIdentifier (server only) */
-  null
-)
-Component.options.__file = "C:\\xampp\\htdocs\\blog\\resources\\assets\\js\\components\\Transition\\staggered-fade.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] staggered-fade.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-97edc7de", Component.options)
-  } else {
-    hotAPI.reload("data-v-97edc7de", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-
-/***/ 60:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    methods: {
-        beforeEnter: function beforeEnter(el) {
-            el.style.opacity = 0;
-            el.style.height = 0;
-        },
-        enter: function enter(el, done) {
-            var delay = el.dataset.index * 100;
-            setTimeout(function () {
-                Velocity(el, { opacity: 1, height: '100%' }, { complete: done });
-            }, delay);
-        },
-        leave: function leave(el, done) {
-            var delay = el.dataset.index * 100;
-            setTimeout(function () {
-                Velocity(el, { opacity: 0, height: 0 }, { complete: done });
-            }, delay);
-        }
-    }
-});
-
-/***/ }),
-
-/***/ 61:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('transition-group', {
-    attrs: {
-      "name": "staggered-fade",
-      "css": false
-    },
-    on: {
-      "before-enter": _vm.beforeEnter,
-      "enter": _vm.enter,
-      "leave": _vm.leave
-    }
-  }, [_vm._t("default")], 2)
-},staticRenderFns: []}
-module.exports.render._withStripped = true
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-97edc7de", module.exports)
-  }
-}
-
-/***/ }),
-
-/***/ 62:
+/***/ 75:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -479,11 +370,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "selectedPost": _vm.selectedPost
       }
     })
-  }))], 1) : _c('div', [_c('staggered-fade', [_c('blog-post', {
+  }))], 1) : _c('div', [_c('fade', {
+    staticClass: "col-md-8"
+  }, [_c('blog-post', {
     attrs: {
       "selectedObject": _vm.dataView.selectData
     }
-  })], 1)], 1), _vm._v(" "), _c('div', {
+  })], 1)], 1), _vm._v(" "), _c('fade', [_c('div', {
     staticClass: "col-md-4"
   }, [_c('div', {
     staticClass: "well well-sm"
@@ -526,9 +419,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.searchValue = $event.target.value
       }
     }
-  }), _vm._v(" "), _vm._m(0)])])])])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('span', {
+  }), _vm._v(" "), _c('span', {
     staticClass: "input-group-btn"
   }, [_c('button', {
     staticClass: "btn btn-default",
@@ -537,8 +428,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('span', {
     staticClass: "glyphicon glyphicon-search"
-  })])])
-}]}
+  })])])])])])])], 1)])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()

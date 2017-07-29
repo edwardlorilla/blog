@@ -18,6 +18,7 @@ export const defaultComponent = () => ({
     error: ErrorComponent,
     delay: 1
 })
+
 export default{
     
     data: {
