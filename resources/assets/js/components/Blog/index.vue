@@ -45,19 +45,7 @@
 
                         </div>
                     </div>
-                    <!-- Blog Search Well -->
-                    <div class="well">
-                        <h4>Blog Search</h4>
-                        <div class="input-group">
-                            <input type="text" v-model="searchValue" class="form-control">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                            </span>
-                        </div>
-                        <!-- /.input-group -->
-                    </div>
+                    <search v-model="searchValue"></search>
                 </div>
             </div>
         </div>
@@ -103,7 +91,7 @@
             fetchData(){
                 var urlFetch = 'api/blog';
                 BLOG_STATE.fetch(urlFetch);
-            }
+            },
         }
     }
 </script>

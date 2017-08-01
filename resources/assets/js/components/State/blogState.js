@@ -38,5 +38,7 @@ export default{
     },
     fetch(urlFetch){
         axios.get(urlFetch).then(response => this.data.dataFetch = response.data)
-    }
+    },
+    
+
 }
