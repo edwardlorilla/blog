@@ -45740,6 +45740,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         searchValue: function searchValue(event) {
             this.$emit('search_event', event);
+        },
+        search_button: function search_button() {
+            this.$emit('search_button');
         }
     }
 });
@@ -45766,19 +45769,22 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.searchValue($event.target.value)
       }
     }
-  }), _vm._v(" "), _vm._m(0)])])
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('span', {
+  }), _vm._v(" "), _c('span', {
     staticClass: "input-group-btn"
   }, [_c('button', {
     staticClass: "btn btn-default",
     attrs: {
       "type": "button"
+    },
+    on: {
+      "click": function($event) {
+        _vm.search_button()
+      }
     }
   }, [_c('span', {
     staticClass: "glyphicon glyphicon-search"
-  })])])
-}]}
+  })])])])])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()

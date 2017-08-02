@@ -39,6 +39,9 @@ export default{
     fetch(urlFetch){
         axios.get(urlFetch).then(response => this.data.dataFetch = response.data)
     },
-    
+    unSelected(){
+        var vm = this.data;
+        vm.SELECTED = false
+    }
 
 }

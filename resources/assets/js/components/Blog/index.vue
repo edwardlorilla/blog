@@ -15,14 +15,15 @@
                         >
                         </component>
                     </staggered-fade>
+
                 </div>
                 <!--</transition-group>-->
                 <div v-else>
-                    <fade >
+                    <fade>
                         <blog-post :selectedObject="dataView.selectData"></blog-post>
                     </fade>
                 </div>
-                <div class="col-md-4">
+                <div  class="col-md-4">
                     <div class="well well-sm">
                         <strong>Category Title</strong>
                         <div class="btn-group">
@@ -45,7 +46,7 @@
 
                         </div>
                     </div>
-                    <search v-model="searchValue"></search>
+                    <search @search_button="unSelected()"  v-model="searchValue"></search>
                 </div>
             </div>
         </div>
@@ -69,7 +70,7 @@
             vm.fetchData()
         },
         computed: {
-            filteredData () {
+            filteredData() {
                 var data = this.dataView.dataFetch.filter(function (country) {
                     return country.title.toLowerCase().includes(this.searchValue.toLowerCase());
                 }.bind(this))
@@ -92,6 +93,10 @@
                 var urlFetch = 'api/blog';
                 BLOG_STATE.fetch(urlFetch);
             },
+            unSelected(){
+                BLOG_STATE.unSelected()
+            }
+
         }
     }
 </script>

@@ -94,6 +94,10 @@ var defaultComponent = function defaultComponent() {
         axios.get(urlFetch).then(function (response) {
             return _this.data.dataFetch = response.data;
         });
+    },
+    unSelected: function unSelected() {
+        var vm = this.data;
+        vm.SELECTED = false;
     }
 });
 
@@ -105,6 +109,7 @@ var defaultComponent = function defaultComponent() {
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__State_blogState__ = __webpack_require__(69);
+//
 //
 //
 //
@@ -199,6 +204,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         fetchData: function fetchData() {
             var urlFetch = 'api/blog';
             __WEBPACK_IMPORTED_MODULE_0__State_blogState__["a" /* default */].fetch(urlFetch);
+        },
+        unSelected: function unSelected() {
+            __WEBPACK_IMPORTED_MODULE_0__State_blogState__["a" /* default */].unSelected();
         }
     }
 });
@@ -380,6 +388,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "textContent": _vm._s(_vm.dataView.STATE_VIEW ? ' List' : ' Grid')
     }
   })])])]), _vm._v(" "), _c('search', {
+    on: {
+      "search_button": function($event) {
+        _vm.unSelected()
+      }
+    },
     model: {
       value: (_vm.searchValue),
       callback: function($$v) {
