@@ -1,14 +1,14 @@
 webpackJsonp([0],{
 
-/***/ 68:
+/***/ 71:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(70),
+  __webpack_require__(73),
   /* template */
-  __webpack_require__(78),
+  __webpack_require__(81),
   /* styles */
   null,
   /* scopeId */
@@ -41,12 +41,12 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 69:
+/***/ 72:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return defaultComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Loading_Placeholder_vue__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Loading_Placeholder_vue__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Loading_Placeholder_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Loading_Placeholder_vue__);
 /**
  * Created by Lorilla on 23/07/2017.
@@ -62,7 +62,7 @@ var defaultComponent = function defaultComponent() {
     return {
         component: new Promise(function (resolve, reject) {
             setTimeout(function () {
-                __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(75)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
+                __webpack_require__.e/* require */(1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(78)]; (resolve.apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__));}.bind(this)).catch(__webpack_require__.oe);
             }, 1000);
         }),
         loading: __WEBPACK_IMPORTED_MODULE_0__Loading_Placeholder_vue___default.a,
@@ -103,33 +103,12 @@ var defaultComponent = function defaultComponent() {
 
 /***/ }),
 
-/***/ 70:
+/***/ 73:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__State_blogState__ = __webpack_require__(69);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__State_blogState__ = __webpack_require__(72);
 //
 //
 //
@@ -213,19 +192,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 71:
+/***/ 74:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(72)
+  __webpack_require__(75)
 }
 var Component = __webpack_require__(1)(
   /* script */
   null,
   /* template */
-  __webpack_require__(74),
+  __webpack_require__(77),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -258,13 +237,13 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 72:
+/***/ 75:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(73);
+var content = __webpack_require__(76);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
@@ -285,7 +264,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 73:
+/***/ 76:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(2)(undefined);
@@ -300,7 +279,7 @@ exports.push([module.i, "\n.timeline-item[data-v-9afcb10c] {\n    background: #f
 
 /***/ }),
 
-/***/ 74:
+/***/ 77:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -342,7 +321,7 @@ if (false) {
 
 /***/ }),
 
-/***/ 78:
+/***/ 81:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -370,24 +349,16 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })], 1)], 1), _vm._v(" "), _c('div', {
     staticClass: "col-md-4"
-  }, [_c('div', {
-    staticClass: "well well-sm"
-  }, [_c('strong', [_vm._v("Category Title")]), _vm._v(" "), _c('div', {
-    staticClass: "btn-group"
-  }, [_c('a', {
-    staticClass: "btn btn-default",
+  }, [_c('category', {
+    attrs: {
+      "state_view": _vm.dataView.STATE_VIEW
+    },
     on: {
-      "click": function($event) {
-        _vm.dataView.STATE_VIEW = !_vm.dataView.STATE_VIEW
+      "state_change": function($event) {
+        _vm.dataView.STATE_VIEW = $event
       }
     }
-  }, [_c('span', {
-    staticClass: "glyphicon ",
-    class: _vm.dataView.STATE_VIEW ? 'glyphicon-th-list' : 'glyphicon-th',
-    domProps: {
-      "textContent": _vm._s(_vm.dataView.STATE_VIEW ? ' List' : ' Grid')
-    }
-  })])])]), _vm._v(" "), _c('search', {
+  }), _vm._v(" "), _c('search', {
     on: {
       "search_button": function($event) {
         _vm.unSelected()

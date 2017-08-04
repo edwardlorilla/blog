@@ -4,6 +4,7 @@
 window.Vue = require('vue');
 import blogPost from  './components/Blog/post.vue'
 import listsComponent from  './components/Blog/list.vue'
+import Category from  './components/Blog/Category.vue'
 import staggeredFade from  './components/Transition/staggered-fade.vue'
 import fade from  './components/Transition/fade.vue'
 import search from  './components/Searchbox/search.vue'
@@ -31,5 +32,10 @@ Vue.component('fade', function (resolve, reject) {
 Vue.component('search', function (resolve, reject) {
     setTimeout(function () {
         resolve(search)
+    }, 800)
+});
+Vue.component('category', function (resolve, reject) {
+    setTimeout(function () {
+        resolve(Category)
     }, 800)
 });

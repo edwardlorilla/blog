@@ -42,6 +42,7 @@ export default{
     unSelected(){
         var vm = this.data;
         vm.SELECTED = false
-    }
+    },
+    
 
 }
