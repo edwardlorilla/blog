@@ -19,6 +19,7 @@
                 </div>
                 <!--</transition-group>-->
                 <div v-else>
+
                     <fade>
                         <blog-post :selectedObject="dataView.selectData"></blog-post>
                     </fade>
@@ -47,6 +48,11 @@
         mounted() {
             var vm = this;
             vm.fetchData()
+            if (!vm.dataView.SELECTED) {
+                window.addEventListener("keydown", function (e) {
+                    e.keyCode === 27 ? vm.unSelected() : false
+                })
+            }
         },
         computed: {
             filteredData() {

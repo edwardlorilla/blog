@@ -143,6 +143,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -159,6 +160,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         var vm = this;
         vm.fetchData();
+        if (!vm.dataView.SELECTED) {
+            window.addEventListener("keydown", function (e) {
+                e.keyCode === 27 ? vm.unSelected() : false;
+            });
+        }
     },
 
     computed: {
