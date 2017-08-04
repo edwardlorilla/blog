@@ -45540,9 +45540,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['state_view'],
     methods: {
-        state_change: function state_change() {
-            var STATE = this.state_view = !this.state_view;
-            this.$emit('state_change', STATE);
+        state_change: function state_change(state_view) {
+            this.$emit('state_change', state_view = !state_view);
         }
     }
 });
@@ -45559,7 +45558,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('a', {
     staticClass: "btn btn-default",
     on: {
-      "click": _vm.state_change
+      "click": function($event) {
+        _vm.state_change(_vm.state_view)
+      }
     }
   }, [_c('span', {
     staticClass: "glyphicon ",

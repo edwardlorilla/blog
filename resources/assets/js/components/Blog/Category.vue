@@ -7,7 +7,7 @@
             <!--<a v-on:click="toggleValue = true" class="btn btn-default btn-sm"><span-->
             <!--class="glyphicon glyphicon-th"></span>Grid</a>-->
             <a class="btn btn-default"
-               v-on:click="state_change"
+               v-on:click="state_change(state_view)"
 
             >
                             <span class="glyphicon "
@@ -27,9 +27,8 @@
     export default {
         props:['state_view'],
         methods:{
-            state_change(){
-                var STATE = (this.state_view = !this.state_view)
-                this.$emit('state_change', STATE)
+            state_change(state_view){
+                this.$emit('state_change', state_view = !state_view)
             }
         }
     }

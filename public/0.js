@@ -98,6 +98,7 @@ var defaultComponent = function defaultComponent() {
     unSelected: function unSelected() {
         var vm = this.data;
         vm.SELECTED = false;
+        vm.selectData = {};
     }
 });
 
