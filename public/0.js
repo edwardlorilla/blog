@@ -200,8 +200,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         if (!vm.dataView.SELECTED) {
             window.addEventListener("keydown", function (e) {
                 e.keyCode === 27 ? vm.unSelected() : false;
-                e.keyCode == 39 ? vm.nextPost() : false;
-                e.keyCode == 37 ? vm.previousPost() : false;
+                e.keyCode == 39 ? vm.nextPost() : false; //right arrow on numpad
+                e.keyCode == 37 ? vm.previousPost() : false; //left arrow
             });
         }
     },
