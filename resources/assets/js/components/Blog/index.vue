@@ -51,6 +51,8 @@
             if (!vm.dataView.SELECTED) {
                 window.addEventListener("keydown", function (e) {
                     e.keyCode === 27 ? vm.unSelected() : false
+                    e.keyCode == 39 ? vm.nextPost() : false;
+                    e.keyCode == 37 ? vm.previousPost() : false;
                 })
             }
         },
@@ -80,6 +82,12 @@
             },
             unSelected(){
                 BLOG_STATE.unSelected()
+            },
+            nextPost(){
+                BLOG_STATE.nextPost()
+            },
+            previousPost(){
+                BLOG_STATE.previousPost()
             }
 
         }

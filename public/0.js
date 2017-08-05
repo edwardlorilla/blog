@@ -78,15 +78,52 @@ var defaultComponent = function defaultComponent() {
         STATE_VIEW: true,
         READY: false,
         dataFetch: [],
-        selectData: {}
+        selectData: {},
+        nextPost: null,
+        previousPost: null
     },
     selectedPost: function selectedPost(index) {
         var vm = this.data;
+        var id = index.id;
+        var next = id + 1 ? id + 1 : null;
+        var previous = id - 1 ? id - 1 : null;
         vm.SELECTED = true;
         vm.selectData = index;
+        vm.nextPost = next;
+        vm.previousPost = previous;
         setTimeout(function () {
             vm.READY = true;
         }, 600);
+    },
+    nextPost: function nextPost() {
+        var vm = this.data;
+        var found = _.find(vm.dataFetch, ['id', vm.nextPost]);
+        if (!_.isEmpty(found)) {
+            var id = found.id ? found.id : null;
+            var next = id + 1 ? id + 1 : null;
+            var previous = id - 1 ? id - 1 : null;
+            vm.selectData = found;
+            vm.nextPost = next;
+            vm.previousPost = previous;
+            setTimeout(function () {
+                vm.READY = true;
+            }, 600);
+        }
+    },
+    previousPost: function previousPost() {
+        var vm = this.data;
+        var found = _.find(vm.dataFetch, ['id', vm.previousPost]);
+        if (!_.isEmpty(found)) {
+            var id = found.id;
+            var next = id + 1 ? id + 1 : null;
+            var previous = id - 1 ? id - 1 : null;
+            vm.selectData = found;
+            vm.nextPost = next;
+            vm.previousPost = previous;
+            setTimeout(function () {
+                vm.READY = true;
+            }, 600);
+        }
     },
     fetch: function fetch(urlFetch) {
         var _this = this;
@@ -163,6 +200,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         if (!vm.dataView.SELECTED) {
             window.addEventListener("keydown", function (e) {
                 e.keyCode === 27 ? vm.unSelected() : false;
+                e.keyCode == 39 ? vm.nextPost() : false;
+                e.keyCode == 37 ? vm.previousPost() : false;
             });
         }
     },
@@ -193,6 +232,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
         unSelected: function unSelected() {
             __WEBPACK_IMPORTED_MODULE_0__State_blogState__["a" /* default */].unSelected();
+        },
+        nextPost: function nextPost() {
+            __WEBPACK_IMPORTED_MODULE_0__State_blogState__["a" /* default */].nextPost();
+        },
+        previousPost: function previousPost() {
+            __WEBPACK_IMPORTED_MODULE_0__State_blogState__["a" /* default */].previousPost();
         }
     }
 });
