@@ -3,6 +3,8 @@
  */
 import LoadingComponent  from './../Loading/Placeholder.vue';
 
+
+
 const ErrorComponent = {
     name: 'error-component',
     template: '<div>error!</div>'

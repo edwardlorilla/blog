@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-md-4">
                     <category :state_view="dataView.STATE_VIEW" @state_change="dataView.STATE_VIEW = $event"></category>
-                    <search @search_button="unSelected()" v-model="searchValue"></search>
+                    <search :items="itemMap" @search_button="unSelected()" v-model="searchValue"></search>
                 </div>
             </div>
         </div>
@@ -51,12 +51,15 @@
             if (!vm.dataView.SELECTED) {
                 window.addEventListener("keydown", function (e) {
                     e.keyCode === 27 ? vm.unSelected() : false
-                    e.keyCode == 39 ? vm.nextPost() : false; //right arrow on numpad
-                    e.keyCode == 37 ? vm.previousPost() : false; //left arrow
+                    e.keyCode == 39 ? vm.nextPost() : false;
+                    e.keyCode == 37 ? vm.previousPost() : false;
                 })
             }
         },
         computed: {
+            itemMap(){
+                return _.map(this.dataView.dataFetch, 'title');
+            },
             filteredData() {
                 var data = this.dataView.dataFetch.filter(function (country) {
                     return country.title.toLowerCase().includes(this.searchValue.toLowerCase());
